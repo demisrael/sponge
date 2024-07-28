@@ -1,0 +1,55 @@
+[package]
+name = "sponge"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.4.7", features = ["derive", "string", "cargo"] }
+tokio = { version = "1.33.0", features = ["sync", "rt-multi-thread"] }
+
+# _______________________________________________________
+#  ____ _  _ ____ ___ _   _    _  _ ____ ____ ___  ____ 
+#  |__/ |  | [__   |   \_/  __ |_/  |__| [__  |__] |__| 
+#  |  \ |__| ___]  |    |      | \_ |  | ___] |    |  | 
+# _______________________________________________________
+kaspa-addresses = "0.13.4"
+# kaspa-bip32 = "0.13.4"
+kaspa-consensus-core = "0.13.4"
+kaspa-core = "0.13.4"
+# kaspa-consensus-wasm = "0.13.4"
+kaspa-hashes = "0.13.4"
+kaspa-notify = "0.13.4"
+kaspa-grpc-client = "0.13.4"
+kaspa-grpc-core = "0.13.4"
+
+kaspa-rpc-core = "0.13.4"
+kaspa-utils = "0.13.4"
+# kaspa-wallet-core = "0.13.4"
+# kaspa-wallet-keys = "0.13.4"
+
+async-channel = "2.0.0"
+
+
+# _________________________________________________________
+#  _ _ _ ____ ____ _  _ ____ _    ____ _ _ _    ____ ____ 
+#  | | | |  | |__/ |_/  |___ |    |  | | | | __ |__/ [__  
+#  |_|_| |__| |  \ | \_ |    |___ |__| |_|_|    |  \ ___] 
+# _________________________________________________________
+
+# workflow-core = "0.14.0"
+# workflow-http = "0.14.0"
+# workflow-log = "0.14.0"
+# workflow-rpc = "0.14.0"
+# workflow-serializer = "0.14.0"
+
+
+[profile.release]
+opt-level = 2
+# opt-level = 3
+# lto = true
+
+[profile.native-release]
+inherits = "release"
+opt-level = 3
+lto = true
+# strip = true
